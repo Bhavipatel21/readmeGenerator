@@ -102,8 +102,9 @@ ${badge}
 *This project uses the ${links} license.*\n
 
 ## Questions
-[Github Profile](https://github.com/${answers.gitusername})
-I can be reached via email at ${answers.email}
+Github Profile : [Creator]:(https://github.com/${answers.gitusername})
+
+If you have any questions please email me at ${answers.email}
   
   `;
 

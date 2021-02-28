@@ -15,21 +15,22 @@
 README Generator can assist in creating a quick README file for any projects by taking users input.
 
 ## Installation Instructions
-You will node.js installed 
+You will need node.js installed 
 * [Node.js](https://en.wikipedia.org/wiki/Node.js)
-* [inquirer](https://www.npmjs.com/package/inquirer/v/0.2.3)
 
 To install the required dependencies, please run the following command:
-
+* [inquirer](https://www.npmjs.com/package/inquirer/v/0.2.3)
 ```
 npm i inquirer 
 
 ```
 
-## Usage
- Instructions how to create README:
- run node index.js from command line 
+## Usage :
 
+[Video]()
+
+## Mock-up :
+![How to create README](./assets/images/readmegenerator.jpg)
 
 
 ## Contribution Guidelines
