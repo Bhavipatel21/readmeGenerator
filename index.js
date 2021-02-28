@@ -11,19 +11,43 @@ const questions = [
         type: "input",
         name: "title",
         message: "What is your project name?",
-   
+        validate:function(answers) {
+            if (answers.length < 1) {
+                return console.log("Project name cannot be blank, Please enter project name.");
+            }
+            return true;
+        }
     },
     {
         type: "input",
         name: "description",
         message: "Please write a short description of your project:",
-
+        validate:function(answers) {
+            if (answers.length < 1){
+                return console.log("Project description cannot be blank, Please enter project description.")
+            }
+            return true
+        }
     },
     {
         type: "input",
         name: "email",
         message: "Please enter your email:",
-       },
+        validate:function(answers) {
+            if (answers.length < 1){
+                return console.log("Email cannot be blank, Please enter your email.")
+            }
+            return true
+        }
+    },
+
+    {
+        type: 'input',
+        name: 'usage',
+        message: "What information will the user need in order to use the repo?",
+       
+
+    },
     //following questions are optional, can be left blank
     {
         type: "list",
@@ -39,9 +63,9 @@ const questions = [
         message: "What command should be ran to install dependencies?",
     },
     {
-        type: "input",
-        name: "dependencies",
-        message: "What command should be ran to install dependencies?",
+        type: 'input',
+        message: 'Please enter contribution guidelines:',
+        name: 'contribution',
     },
     {
         type: "input",

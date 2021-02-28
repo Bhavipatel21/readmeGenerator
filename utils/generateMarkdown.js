@@ -51,38 +51,58 @@ function renderLicenseLink(answers) {
 function renderLicenseSection(answers) {
 
   if (answers.license === 'None') {
-    return ``;
+    return `
+    `;
     
   }else {
-    return `## License  ${renderLicenseBadge(answers)}
-  Project license : click ${renderLicenseLink(answers)}`;
+    return `## License  
+       ${renderLicenseBadge(answers)}
+     Project license : click ${renderLicenseLink(answers)}`;
   }
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  return `# ${answers.title}
-  ${renderLicenseBadge(answers)}
-  ## Description 
-   ${answers.description}
 
-  ## Installation
-   ${answers.installation}
-  ## Usage 
-   ${answers.usage}
-  ## Contributing
-   ${answers.writecontribution}
-   
-  ## Tests
-  ${answers.test}
-  ${renderLicenseSection(answers)}
+  let badge = renderLicenseBadge(answers);
+  let links = renderLicenseLink(answers);
+  let testreadme = `
+  ## Project Name
+  #${answers.title}
 
-  ## Questions
+  ${badge}
 
-  For any questions email me at: ${answers.email}
+  ## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contribution Guidelines](#contribution-guidelines)
+* [License](#license)
+* [Questions](#questions)
 
-`;
+## Description
+${answers.description}
+
+## Installation Instructions
+${answers.installation}
+
+## Usage
+${answers.usage}
+
+## Contribution Guidelines
+${answers.contribution}
+
+## License
+*This project uses the ${answers.license} license.*\n
+*Read more about it by clicking the link below*\n
+${links}
+## Questions
+[Github Profile](https://github.com/${answers.gitusername})
+I can be reached via email at ${answers.email}
+  
+  `
+  
+return testreadme;
 }
 
 module.exports = generateMarkdown;
-
