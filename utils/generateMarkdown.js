@@ -2,22 +2,26 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(answers) {
   let licenseBadge;
-  switch(answers.license){
-    case 'MIT':
-    licenseBadge = "![badge](https://img.shields.io/badge/license-MIT-blueviolet)";
-    break;
-    case 'IBM':
-    licenseBadge = "![badge](https://img.shields.io/badge/license-IBM-blueviolet)";
-    break;
-    case 'Apache':
-    licenseBadge = "![badge](https://img.shields.io/badge/license-Apache-blueviolet)";
-    break;
-    case 'Eclipse':
-    licenseBadge = "![badge](https://img.shields.io/badge/license-Eclipse-blueviolet)";
-    break;
-    case 'None':
-    licenseBadge = '';
-      }
+  switch (answers.license) {
+    case "MIT":
+      licenseBadge =
+        "![badge](https://img.shields.io/badge/license-MIT-blueviolet)";
+      break;
+    case "IBM":
+      licenseBadge =
+        "![badge](https://img.shields.io/badge/license-IBM-blueviolet)";
+      break;
+    case "Apache":
+      licenseBadge =
+        "![badge](https://img.shields.io/badge/license-Apache-blueviolet)";
+      break;
+    case "Eclipse":
+      licenseBadge =
+        "![badge](https://img.shields.io/badge/license-Eclipse-blueviolet)";
+      break;
+    case "None":
+      licenseBadge = "";
+  }
   return licenseBadge;
 }
 
@@ -26,53 +30,47 @@ function renderLicenseBadge(answers) {
 function renderLicenseLink(answers) {
   let licenseLink;
 
-  switch(answers.license) {
-    case 'MIT': 
-    licenseLink = "[MIT](https://spdx.org/licenses/MIT.html)";
-    break;
-    case 'IBM':
-    licenseLink="[IBM](https://spdx.org/licenses/IPL-1.0.html)";
-    break;
-    case 'Apache License':
-    licenseLink = "[Apache](https://spdx.org/licenses/Apache-2.0.html)";
-    break;
-    case 'Eclipse':
-    licenseLink = "[Eclipse](https://spdx.org/licenses/Apache-2.0.html)";
-    break;
-    case 'None':
-    licenseLink="";
+  switch (answers.license) {
+    case "MIT":
+      licenseLink = "[MIT](https://spdx.org/licenses/MIT.html)";
+      break;
+    case "IBM":
+      licenseLink = "[IBM](https://spdx.org/licenses/IPL-1.0.html)";
+      break;
+    case "Apache License":
+      licenseLink = "[Apache](https://spdx.org/licenses/Apache-2.0.html)";
+      break;
+    case "Eclipse":
+      licenseLink = "[Eclipse](https://spdx.org/licenses/Apache-2.0.html)";
+      break;
+    case "None":
+      licenseLink = "";
   }
 
- return licenseLink;
+  return licenseLink;
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(answers) {
-
-  if (answers.license === 'None') {
+  if (answers.license === "None") {
     return `
     `;
-    
-  }else {
+  } else {
     return `## License  
        ${renderLicenseBadge(answers)}
      Project license : click ${renderLicenseLink(answers)}`;
   }
 }
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-
   let badge = renderLicenseBadge(answers);
   let links = renderLicenseLink(answers);
-  let testreadme = `
-  ## Project Name
+  let testreadme = `## Project Title
   #${answers.title}
-
-  ${badge}
-
+  
   ## Table of Contents
+
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -81,10 +79,16 @@ function generateMarkdown(answers) {
 * [Questions](#questions)
 
 ## Description
+
 ${answers.description}
 
 ## Installation Instructions
+
+To install the required dependencies, please run the following command:
+
+\`\`\`
 ${answers.installation}
+\`\`\`
 
 ## Usage
 ${answers.usage}
@@ -93,16 +97,17 @@ ${answers.usage}
 ${answers.contribution}
 
 ## License
-*This project uses the ${answers.license} license.*\n
-*Read more about it by clicking the link below*\n
-${links}
+${badge}
+
+*This project uses the ${links} license.*\n
+
 ## Questions
 [Github Profile](https://github.com/${answers.gitusername})
 I can be reached via email at ${answers.email}
   
-  `
-  
-return testreadme;
+  `;
+
+  return testreadme;
 }
 
 module.exports = generateMarkdown;
