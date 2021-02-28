@@ -1,5 +1,5 @@
 ## Project Title
-  #README Generator
+  README Generator
   
   ## Table of Contents
 
@@ -43,7 +43,7 @@ Link to Contributor's Covenant: https://www.contributor-covenant.org/version/2/0
 
 
 ## Questions
-[Github Profile](https://github.com/bhavipatel21)
-I can be reached via email at bhavij0511@gmail.com
+Github Profile : (https://github.com/bhavipatel21)
+If you have any questions please email me at bhavij0511@gmail.com
   
   
