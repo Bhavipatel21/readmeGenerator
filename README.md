@@ -26,7 +26,7 @@ npm i inquirer
 ```
 
 ## Usage :
-
+Walkthough of creating README.md
 [Video](https://drive.google.com/file/d/1RMWzefrnr3n1Dg16a4D14wveNqzwPaLq/view)
 
 ## Mock-up :
